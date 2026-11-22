@@ -4,7 +4,9 @@ Explore the November 2026 flooding along the St. Johns River in Seminole County,
 
 **[Open the dashboard](https://lamcnamara.github.io/seminole-county-flood-dashboard/)**
 
-The flood data were captured through **November 21, 2026 at 6:23 p.m. EST**. The local news review closed at **6:57 p.m. EST**. Each warning, observation and forecast carries its own time. For current warnings, road conditions and public instructions, use the [National Weather Service](https://beta.weather.gov/forecast/county/12117/), [FL511](https://www.fl511.com/) and [Seminole County Emergency Management](https://www.seminolecountyfl.gov/departments-services/prepare-seminole/).
+The flood data were captured through **November 22, 2026 at 5:21 a.m. EST**. The local news review closed at **5:37 a.m. EST**. Each warning, observation and forecast carries its own time. For current warnings, road conditions and public instructions, use the [National Weather Service](https://beta.weather.gov/forecast/county/12117/), [FL511](https://www.fl511.com/) and [Seminole County Emergency Management](https://www.seminolecountyfl.gov/departments-services/prepare-seminole/).
+
+At 4:30 a.m. EST, the river measured 12.75 ft above Lake Harney and 7.30 ft near Sanford. The 13.0 ft Lake Harney crest is a forecast. FHP still listed the SR 46 crossing closure at 5:21 a.m. The county neighborhood road reports are dated November 21 at 10:30 a.m.
 
 ## Reading the edition
 
@@ -30,4 +32,4 @@ python -X utf8 build.py
 python -X utf8 verify.py Seminole-County-Flooding-Impact-Dashboard.html
 ```
 
-Please include the edition ID and a dated source when [reporting a correction](https://github.com/lamcnamara/seminole-county-flood-dashboard/issues). This edition is `2026-11-21-1823-EST`.
+Please include the edition ID and a dated source when [reporting a correction](https://github.com/lamcnamara/seminole-county-flood-dashboard/issues). This edition is `2026-11-22-0521-EST`.

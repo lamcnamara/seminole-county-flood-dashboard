@@ -8,7 +8,7 @@ The published file is `../Seminole-County-Flooding-Impact-Dashboard.html`. This 
 
 ### Next data review
 
-The issued snapshot is **November 21, 2026 at 6:23 pm EST**. The news review closed separately at **6:57 pm EST**. The November 22 maintenance pass kept that evidence cutoff. NWS Melbourne issued a later Lake Harney warning at **8:27 pm EST on November 21**. Begin the next data review by following the CAP update chains for Lake Harney and Sanford, then check both reaches against the latest observed stages and forecast issue times. Recheck the SR 46 closure with FDOT and the county before carrying it forward. [NWS county warnings](https://beta.weather.gov/forecast/county/12117/) · [Prepare Seminole](https://www.seminolecountyfl.gov/departments-services/prepare-seminole/) · [FL511](https://www.fl511.com/)
+The issued snapshot is **November 22, 2026 at 5:21 am EST**. The two NWS warning messages expire at noon EST on Nov 22. Check the replacement messages and whether the Lake Harney gauge reaches the forecast 13.0 ft. Follow the Sanford rise toward the 8 ft major threshold. Verify SR 46 with FHP, FDOT and the county. Saturday’s 10:30 am neighborhood road list and Friday’s rainfall observations retain their original dates. [NWS warnings](https://beta.weather.gov/forecast/county/12117/) · [County bulletin](https://www.seminolecountyfl.gov/departments-services/prepare-seminole/emergency-event/flooding/) · [FHP incidents](https://trafficincidents.flhsmv.gov/SmartWebClient/CadView.aspx)
 
 ### Open a review
 

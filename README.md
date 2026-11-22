@@ -4,16 +4,16 @@ Explore the November 2026 flooding along the St. Johns River in Seminole County,
 
 **[Open the dashboard](https://lamcnamara.github.io/seminole-county-flood-dashboard/)**
 
-The flood data were captured through **November 22, 2026 at 5:21 a.m. EST**. The local news review closed at **5:37 a.m. EST**. Each warning, observation and forecast carries its own time. For current warnings, road conditions and public instructions, use the [National Weather Service](https://beta.weather.gov/forecast/county/12117/), [FL511](https://www.fl511.com/) and [Seminole County Emergency Management](https://www.seminolecountyfl.gov/departments-services/prepare-seminole/).
+The flood data were captured through **November 22, 2026 at 1:49 p.m. EST**. The local news review closed at **1:54 p.m. EST**. Each warning, observation and forecast carries its own time. For current warnings, road conditions and public instructions, use the [National Weather Service](https://beta.weather.gov/forecast/county/12117/), [FL511](https://www.fl511.com/) and [Seminole County Emergency Management](https://www.seminolecountyfl.gov/departments-services/prepare-seminole/).
 
-At 4:30 a.m. EST, the river measured 12.75 ft above Lake Harney and 7.30 ft near Sanford. The 13.0 ft Lake Harney crest is a forecast. FHP still listed the SR 46 crossing closure at 5:21 a.m. The county neighborhood road reports are dated November 21 at 10:30 a.m.
+The latest available observations were 12.82 ft above Lake Harney at 7:30 a.m. EST and 7.42 ft near Sanford at 12:30 p.m. NWS forecast a 13.1 ft crest above Lake Harney overnight. FHP listed the SR 46 closure at 1:49 p.m. The county’s 10 a.m. bulletin listed Seminole Boulevard closed between Mellonville Avenue and US 17-92.
 
 ## Reading the edition
 
 | Section | What you can check |
 | --- | --- |
 | [River levels and outlook](https://lamcnamara.github.io/seminole-county-flood-dashboard/Seminole-County-Flooding-Impact-Dashboard.html#levels) | Compare measured stages with the forecast issued for each reach. Each gauge uses its own flood thresholds. |
-| [Roads and public access](https://lamcnamara.github.io/seminole-county-flood-dashboard/Seminole-County-Flooding-Impact-Dashboard.html#roads) | Search the 36 county road reports by location and condition. State road closures have separate agency citations. |
+| [Roads and public access](https://lamcnamara.github.io/seminole-county-flood-dashboard/Seminole-County-Flooding-Impact-Dashboard.html#roads) | Search the 30 distinct county road locations by location and condition. State road closures have separate agency citations. |
 | [Rainfall](https://lamcnamara.github.io/seminole-county-flood-dashboard/Seminole-County-Flooding-Impact-Dashboard.html#rain) | Compare the 18 station reports by accumulation period and ending time. |
 | [Sources and edition files](https://lamcnamara.github.io/seminole-county-flood-dashboard/Seminole-County-Flooding-Impact-Dashboard.html#edition-files) | Download the source snapshot or the editing kit, including the raw agency samples, map inputs, page builder and verifier. |
 
@@ -32,4 +32,4 @@ python -X utf8 build.py
 python -X utf8 verify.py Seminole-County-Flooding-Impact-Dashboard.html
 ```
 
-Please include the edition ID and a dated source when [reporting a correction](https://github.com/lamcnamara/seminole-county-flood-dashboard/issues). This edition is `2026-11-22-0521-EST`.
+Please include the edition ID and a dated source when [reporting a correction](https://github.com/lamcnamara/seminole-county-flood-dashboard/issues). This edition is `2026-11-22-1349-EST`.

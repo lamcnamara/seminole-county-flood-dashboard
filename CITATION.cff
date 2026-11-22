@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Please cite this dashboard and the issuing agencies for the observations you use."
+title: "Seminole County Flooding Impact Dashboard"
+authors:
+  - family-names: "McNamara"
+    given-names: "Lauren"
+version: "2026-11-21-1823-EST"
+date-released: 2026-11-22
+repository-code: "https://github.com/lamcnamara/seminole-county-flood-dashboard"
+url: "https://lamcnamara.github.io/seminole-county-flood-dashboard/"
+keywords:
+  - flood monitoring
+  - Seminole County
+  - Florida
+  - hydrology

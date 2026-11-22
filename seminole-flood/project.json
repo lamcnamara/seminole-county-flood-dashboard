@@ -1,0 +1,103 @@
+{
+  "projectId": "seminole-flood",
+  "sources": [
+    {
+      "id": "SRC-01", "name": "County flood warnings", "publisher": "National Weather Service, Melbourne",
+      "section": "warnings", "trigger": "Every edition", "url": "https://api.weather.gov/alerts/active?zone=FLC117",
+      "reference": "https://www.weather.gov/documentation/services-web-api",
+      "method": "Collect the county feed. Check affected forecast zones and the Melbourne warning display for additional coverage.",
+      "accept": "Retain CAP IDs, county or reach, Actual status, issue and expiry times, replacements and cancellations. An empty successful feed describes this query at capture. A failed request leaves status unknown.",
+      "requests": {"alerts": "https://api.weather.gov/alerts/active?zone=FLC117"}
+    },
+    {
+      "id": "SRC-02", "name": "River stage and forecasts", "publisher": "NOAA National Water Prediction Service",
+      "section": "levels", "trigger": "Every edition", "url": "https://water.noaa.gov/gauges/GENF1",
+      "reference": "https://water.noaa.gov/about/api",
+      "method": "Collect metadata and stageflow for GENF1 (above Lake Harney), SNFF1 (Sanford) and COCF1 (upstream at Cocoa).",
+      "accept": "Match station, stage units and thresholds. Record observation time, forecast issue time and each valid time. Review stale or missing series. Keep peaks labeled as forecasts until observed.",
+      "requests": {
+        "GENF1-meta": "https://api.water.noaa.gov/nwps/v1/gauges/GENF1",
+        "GENF1-series": "https://api.water.noaa.gov/nwps/v1/gauges/GENF1/stageflow",
+        "SNFF1-meta": "https://api.water.noaa.gov/nwps/v1/gauges/SNFF1",
+        "SNFF1-series": "https://api.water.noaa.gov/nwps/v1/gauges/SNFF1/stageflow",
+        "COCF1-meta": "https://api.water.noaa.gov/nwps/v1/gauges/COCF1",
+        "COCF1-series": "https://api.water.noaa.gov/nwps/v1/gauges/COCF1/stageflow"
+      }
+    },
+    {
+      "id": "SRC-03", "name": "Tributary observations", "publisher": "U.S. Geological Survey",
+      "section": "levels", "trigger": "Every edition", "url": "https://api.waterdata.usgs.gov/docs/ogcapi/",
+      "method": "Check gage height (00065) at the Econlockhatchee, Little Econlockhatchee, Wekiva and Lake Jesup outlet stations in the capture list.",
+      "accept": "Require the intended site, series, parameter and feet. Check observation age against the edition cutoff. Withhold readings older than two hours, future times and missing values. Retain qualifiers and provisional status.",
+      "requests": {
+        "usgs": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/latest-continuous/items?monitoring_location_id=USGS-02233500&parameter_code=00065&f=json",
+        "usgs-02233475": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/latest-continuous/items?monitoring_location_id=USGS-02233475&parameter_code=00065&f=json",
+        "usgs-02235000": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/latest-continuous/items?monitoring_location_id=USGS-02235000&parameter_code=00065&f=json",
+        "usgs-02234435": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/latest-continuous/items?monitoring_location_id=USGS-02234435&parameter_code=00065&f=json"
+      }
+    },
+    {
+      "id": "SRC-04", "name": "Rainfall reports", "publisher": "National Weather Service, Melbourne",
+      "section": "rain", "trigger": "Every edition", "url": "https://www.weather.gov/mlb/",
+      "method": "Search Melbourne public information statements from the preceding 72 hours. Extend the window manually for an older event. Read the selected product and save its exact JSON and ID.",
+      "accept": "Match Seminole County, station, inches, accumulation interval, network and ending time. Record issuance separately. A missing bulletin supplies no county total.",
+      "requests": {"rainlist": "https://api.weather.gov/products?type=PNS&location=MLB&start={start}&end={end}"}
+    },
+    {
+      "id": "SRC-05", "name": "County notices and local access", "publisher": "Seminole County Emergency Management and Public Works",
+      "section": "community", "trigger": "Every edition", "url": "https://www.seminolecountyfl.gov/departments-services/prepare-seminole/emergency-event/flooding/",
+      "reference": "https://www.seminolecountyfl.gov/departments-services/public-works/current-traffic-conditions",
+      "method": "Read the event bulletin and local traffic viewer. Record the issuing section, location, stated as-of time and scope for roads, parks, supplies and assistance.",
+      "accept": "Keep standing water, closures and reopenings distinct. Confirm evacuation status with the issuing authority. If the incident page retires, mark the notice historical and find the successor through county emergency management."
+    },
+    {
+      "id": "SRC-06", "name": "State road incidents", "publisher": "Florida DOT / FL511 and Florida Highway Patrol",
+      "section": "roads", "trigger": "Every edition", "url": "https://www.fl511.com/",
+      "reference": "https://trafficincidents.flhsmv.gov/SmartWebClient/CadView.aspx",
+      "method": "Review the incident map, FHP listing and any FDOT advisory for the affected segment, including the county line.",
+      "accept": "Record route, limits, direction, agency, status and as-of time. Require explicit support for a reopening. Keep local road reports with the county source."
+    },
+    {
+      "id": "SRC-07", "name": "Public health notices", "publisher": "Florida Department of Health in Seminole County",
+      "section": "community", "trigger": "Each edition carrying health guidance", "url": "https://seminole.floridahealth.gov/",
+      "method": "Find the dated advisory or the county bulletin attributing it to DOH-Seminole.",
+      "accept": "Check affected area, issue date, instructions and any withdrawal. Link the exact notice and distinguish general guidance from event-specific actions."
+    },
+    {
+      "id": "SRC-08", "name": "Campus status", "publisher": "Florida Department of Education and the affected institution",
+      "section": "community", "trigger": "Each edition carrying closures", "url": "https://www.fldoe.org/em-response/",
+      "method": "Check the state storm listing and the institution's current announcement for the named campus.",
+      "accept": "Record the campus, effective window, reopening notice and issuer. Close an expired dated entry or mark its current status unconfirmed."
+    },
+    {
+      "id": "SRC-09", "name": "Emergency declarations", "publisher": "Florida Governor and Seminole County",
+      "section": "community", "trigger": "Each edition carrying declarations", "url": "https://www.flgov.com/eog/news/executive-orders",
+      "reference": "https://www.seminolecountyfl.gov/departments-services/prepare-seminole/emergency-event/flooding/",
+      "method": "Trace the original signed order, amendments and extensions for each jurisdiction.",
+      "accept": "Record order number, signatory, county coverage and effective or expiry time. Check newer orders for changes to the covered area or dates."
+    },
+    {
+      "id": "SRC-10", "name": "Local impact reporting", "publisher": "Original reporting from local, state and wire outlets",
+      "section": "news", "trigger": "Every edition", "url": "https://www.wftv.com/news/local/",
+      "method": "Review original reports from WFTV, Spectrum News 13, Florida public media and AP. Follow leads to the responsible agency for public instructions.",
+      "accept": "Record byline, publication and review times, location and original URL. Deduplicate syndicated stories. Attribute eyewitness accounts and retain each report's date."
+    },
+    {
+      "id": "SRC-11", "name": "Reference geography", "publisher": "Census TIGERweb, FDOT, Florida NHD and the Seminole County Water Atlas",
+      "section": "map-sources", "trigger": "On layer, station or coverage changes", "url": "https://gis.waterinstitute.usf.edu/arcgis/rest/services/Atlases/Seminole/MapServer/12",
+      "method": "Use the exact place, road, river, lake and boundary queries in the embedded snapshot. Check service metadata and layer IDs before rebuilding.",
+      "accept": "Retain CRS, retrieval date, attribution and simplification. Check community and gauge positions visually. Road geometry alone supplies no access status."
+    }
+  ],
+  "opportunities": [
+    {"id": "EXP-01", "title": "Verify road reopening history", "priority": "High", "status": "Open", "sourceIds": ["SRC-05","SRC-06"], "url": "https://www.fl511.com/", "next": "Compare one SR 46 incident across FDOT and county records. Establish stable identifiers, local-road coverage and reuse terms before adding an event history."},
+    {"id": "EXP-02", "title": "Compare forecasts with observed crests", "priority": "High", "status": "Ready for a second capture", "sourceIds": ["SRC-02"], "url": "https://water.noaa.gov/about/api", "next": "Archive successive issued forecasts for GENF1 and SNFF1. Match valid times to observed stages and identify gaps before calculating crest timing or height differences."},
+    {"id": "EXP-03", "title": "Extend rainfall coverage between bulletins", "priority": "Medium", "status": "Candidate source", "sourceIds": ["SRC-04"], "url": "https://www.sjrwmd.com/data/hydrologic/", "next": "Check district station coordinates, downloadable history, units and accumulation boundaries. Compare overlapping stations for one event before charting county coverage."},
+    {"id": "EXP-04", "title": "Add surveyed flood marks after an event", "priority": "Medium", "status": "Candidate source", "sourceIds": ["SRC-02","SRC-11"], "url": "https://www.usgs.gov/tools/flood-event-viewer", "next": "Find a published mark in Seminole County. Verify its event, survey date, quality and vertical datum before adding a historical map point."}
+  ],
+  "history": [
+    {"date": "2026-11-22", "type": "Maintenance", "edition": "2026-11-21-1823-EST", "note": "Added current NWS warnings and county notices beside the dated snapshot. The headline river-stage categories now use the same records as the station cards. Flood observations and the news review retain their separate November 21 cutoffs."},
+    {"date": "2026-11-22", "type": "Maintenance", "edition": "2026-11-21-1823-EST", "note": "Established the manual refresh workflow, source register and expansion queue. The published observations and public notices retain their November 21 timestamps."},
+    {"date": "2026-11-21", "type": "Data edition", "edition": "2026-11-21-1823-EST", "note": "Baseline from the embedded evidence. Flood data through 6:23 pm EST. News reviewed separately at 6:57 pm EST."}
+  ]
+}

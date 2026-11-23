@@ -8,7 +8,7 @@ The published file is `../Seminole-County-Flooding-Impact-Dashboard.html`. This 
 
 ### Next data review
 
-The issued snapshot is **November 22, 2026 at 1:49 pm EST**. The last Lake Harney observation available from NWPS and USGS was 12.82 ft at 7:30 am. Check for newer measurements before calling a crest. The latest forecast reaches 13.1 ft overnight. Follow Sanford toward its 8 ft major threshold and check the NWS statements due at 11 pm (Sanford) and 11:15 pm (Lake Harney). Recheck SR 46 with FHP and Seminole Boulevard with the county. The county’s Sunday 10 am list contains 31 road entries covering 30 distinct locations. Friday’s rainfall observations retain their original dates. [NWS warnings](https://beta.weather.gov/forecast/county/12117/) · [County bulletin](https://www.seminolecountyfl.gov/departments-services/prepare-seminole/emergency-event/flooding/) · [FHP incidents](https://trafficincidents.flhsmv.gov/SmartWebClient/CadView.aspx)
+The issued snapshot is **November 22, 2026 at 11:06 pm EST**. NOAA and USGS still list 12.82 ft at 7:30 am as the latest above Lake Harney. Look for resumed readings before reporting an observed crest. The 9:01 pm forecast puts Sanford at its 8.0 ft major threshold at 1 pm Tuesday. Both NWS warning updates list noon Monday for their next statement. Recheck SR 46, Seminole Boulevard and the county declaration extension. The county road list is dated Sunday morning and the rainfall bulletin is dated Friday. [NWS warnings](https://beta.weather.gov/forecast/county/12117/) · [County bulletin](https://www.seminolecountyfl.gov/departments-services/prepare-seminole/emergency-event/flooding/) · [FHP incidents](https://trafficincidents.flhsmv.gov/SmartWebClient/CadView.aspx)
 
 ### Open a review
 

@@ -4,9 +4,9 @@ Explore the November 2026 flooding along the St. Johns River in Seminole County,
 
 **[Open the dashboard](https://lamcnamara.github.io/seminole-county-flood-dashboard/)**
 
-The flood data were captured through **November 22, 2026 at 11:06 p.m. EST**. The local news review closed at **11:10 p.m. EST**. Each warning, observation and forecast carries its own time. For current warnings, road conditions and public instructions, use the [National Weather Service](https://beta.weather.gov/forecast/county/12117/), [FL511](https://www.fl511.com/) and [Seminole County Emergency Management](https://www.seminolecountyfl.gov/departments-services/prepare-seminole/).
+The flood data were captured through **November 23, 2026 at 11:32 a.m. EST**. The local news review closed at **11:34 a.m. EST**. Each warning, observation and forecast carries its own time. For current warnings, road conditions and public instructions, use the [National Weather Service](https://beta.weather.gov/forecast/county/12117/), [FL511](https://www.fl511.com/) and [Seminole County Emergency Management](https://www.seminolecountyfl.gov/departments-services/prepare-seminole/).
 
-The latest available observations were 12.82 ft above Lake Harney at 7:30 a.m. EST and 7.53 ft near Sanford at 9:30 p.m. The 9:01 p.m. forecast showed a 13.1 ft crest above Lake Harney overnight. Both NOAA and USGS still listed the morning measurement as the latest there. FHP listed the SR 46 closure at 11:06 p.m. The county’s 10 a.m. bulletin listed Seminole Boulevard closed between Mellonville Avenue and US 17-92.
+USGS measured 13.07 ft above Lake Harney at 9:45 am EST. Sanford measured 7.71 ft at 10:30 am. Two Monday NWS warnings and new forecasts were captured. FHP listed the SR 46 closure in Seminole and Volusia, with local access only on the Brevard approach. The forecast first puts Sanford at its 8.0 ft major threshold at 1 p.m. Tuesday. The county’s road list remains dated Sunday at 10 a.m.
 
 ## Reading the edition
 
@@ -32,4 +32,4 @@ python -X utf8 build.py
 python -X utf8 verify.py Seminole-County-Flooding-Impact-Dashboard.html
 ```
 
-Please include the edition ID and a dated source when [reporting a correction](https://github.com/lamcnamara/seminole-county-flood-dashboard/issues). This edition is `2026-11-22-2306-EST`.
+Please include the edition ID and a dated source when [reporting a correction](https://github.com/lamcnamara/seminole-county-flood-dashboard/issues). This edition is `2026-11-23-1132-EST`.
